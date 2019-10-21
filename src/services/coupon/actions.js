@@ -1,0 +1,17 @@
+import { APPLY_COUPON } from "./actionTypes";
+import { APPLY_COUPON_URL } from "../../configs";
+import Axios from "axios";
+
+export const applyCoupon = (coupon, restaurant_id) => dispatch => {
+    Axios.post(APPLY_COUPON_URL, {
+        coupon: coupon,
+        restaurant_id: restaurant_id
+    })
+        .then(response => {
+            const coupon = response.data;
+            return dispatch({ type: APPLY_COUPON, payload: coupon });
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
