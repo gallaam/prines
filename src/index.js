@@ -144,135 +144,38 @@ const ScrollToTop = () => {
     return null;
 };
 
-ReactDOM.render( <Root>
+ReactDOM.render( 
+	<Root>
         <BrowserRouter>
-        <React.Fragment>
-        <Route component = {
-            ScrollToTop
-        }
-        /> <Switch>
-        <Route exact strict path = "/:url*"
-        render = {
-            props => <Redirect to = {
-                `${props.location.pathname}/`
-            }
-            />} /
-            >
-            <Route path = {
-                "/"
-            }
-            exact component = {
-                withTracker(App)
-            }
-            /> <Route path = {
-                "/search-location"
-            }
-            exact component = {
-                withTracker(Location)
-            }
-            /> <Route path = {
-                "/:location/restaurants"
-            }
-            exact component = {
-                withTracker(Home)
-            }
-            /> <Route
-            path = {
-                "/:location/restaurants/:restaurant"
-            }
-            exact
-            component = {
-                withTracker(Items)
-            }
-            /> <Route path = {
-                "/explore"
-            }
-            exact component = {
-                withTracker(Explore)
-            }
-            /> <Route path = {
-                "/login"
-            }
-            exact component = {
-                withTracker(Login)
-            }
-            /> <Route path = {
-                "/register"
-            }
-            exact component = {
-                withTracker(Register)
-            }
-            /> <Route path = {
-                "/my-account"
-            }
-            exact component = {
-                withTracker(Account)
-            }
-            /> <Route path = {
-                "/my-addresses"
-            }
-            exact component = {
-                withTracker(Addresses)
-            }
-            /> <Route path = {
-                "/checkout"
-            }
-            exact component = {
-                withTracker(Checkout)
-            }
-            /> <Route path = {
-                "/running-order"
-            }
-            exact component = {
-                withTracker(RunningOrder)
-            }
-            /> <Route path = {
-                "/my-orders"
-            }
-            exact component = {
-                withTracker(Orders)
-            }
-            /> <Route path = {
-                "/cart"
-            }
-            exact component = {
-                withTracker(CartPage)
-            }
-            />
+        	<React.Fragment>
+        		<Route component = { ScrollToTop } />
+        			<Switch>
+        				<Route exact strict path = "/:url*" render = { props => <Redirect to = { `${props.location.pathname}/` } />} />
+        				<Route path = { "/" } exact component = { withTracker(App) } /> 
+        				<Route path = { "/search-location" } exact component = { withTracker(Location) } />
+        				<Route path = { "/:location/restaurants" } exact component = { withTracker(Home) } />
 
-            { /* Delivery Routes */ } <Route path = {
-                "/delivery"
-            }
-            exact component = {
-                Delivery
-            }
-            /> <Route path = {
-                "/delivery/login"
-            }
-            exact component = {
-                DeliveryLogin
-            }
-            /> <Route path = {
-                "/delivery/orders"
-            }
-            exact component = {
-                DeliveryOrders
-            }
-            /> <Route path = {
-                "/delivery/orders/:unique_order_id"
-            }
-            exact component = {
-                ViewOrder
-            }
-            /> <Route path = {
-                "/delivery/completed-orders"
-            }
-            exact component = {
-                Delivery
-            }
-            /> { /* Common Routes */ } <Route component = {
-                NotFound
-            }
-            /> </Switch> </React.Fragment> </BrowserRouter> </Root>,
-            document.getElementById("root")
-        );
+        				<Route path = { "/:location/restaurants/:restaurant" } exact component = { withTracker(Items) } />
+        				<Route path = { "/explore" } exact component = { withTracker(Explore) } />
+        				<Route path = { "/login" } exact component = { withTracker(Login) } />
+        				<Route path = { "/register" } exact component = { withTracker(Register) } />
+        				<Route path = { "/my-account" } exact component = { withTracker(Account) } />
+        				<Route path = { "/my-addresses" } exact component = { withTracker(Addresses) } />
+        				<Route path = { "/checkout" } exact component = { withTracker(Checkout) } />
+        				<Route path = { "/running-order" } exact component = { withTracker(RunningOrder) } />
+        				<Route path = { "/my-orders" } exact component = { withTracker(Orders) } />
+        				<Route path = { "/cart" } exact component = { withTracker(CartPage) } />
+        				{ /* Delivery Routes */ }
+        				<Route path = { "/delivery" } exact component = { Delivery } />
+        				<Route path = { "/delivery/login" } exact component = { DeliveryLogin } />
+        				<Route path = { "/delivery/orders" } exact component = { DeliveryOrders } />
+        				<Route path = { "/delivery/orders/:unique_order_id"} exact component = { ViewOrder } />
+        				<Route path = { "/delivery/completed-orders"} exact component = { Delivery } />
+        				{ /* Common Routes */ }
+        				<Route component = { NotFound } />
+        			</Switch>
+        	</React.Fragment>
+        </BrowserRouter>
+    </Root>,
+    document.getElementById("root")
+);

@@ -25,7 +25,7 @@ class Hero extends Component {
             <
             div className = "col-md-12 left-col" >
             <
-            img src = "/assets/img/logos/logo.png"
+            img src = "./assets/img/logos/logo.png"
             alt = {
                 localStorage.getItem("storeName")
             }

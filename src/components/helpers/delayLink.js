@@ -13,12 +13,14 @@ export default class DelayLink extends React.Component {
         onDelayStart: () => {},
         onDelayEnd: () => {}
     };
+    static contextTypes = {
+        router: () => null
+    };
 
-    static contextTypes = Link.contextTypes;
-
-    constructor(props) {
+    constructor(props, context) {
         super(props);
         this.timeout = null;
+        console.log(context.router);
     }
 
     componentWillUnmount() {
@@ -28,7 +30,7 @@ export default class DelayLink extends React.Component {
     }
 
     handleClick = e => {
-       
+        console.log(this.context.router);
         const {
             replace,
             to,
@@ -39,7 +41,7 @@ export default class DelayLink extends React.Component {
         const {
             history
         } = this.context.router;
-        
+
         onDelayStart(e, to);
         if (e.defaultPrevented) {
             return;

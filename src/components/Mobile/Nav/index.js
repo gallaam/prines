@@ -24,7 +24,7 @@ class Nav extends Component {
                                 <p className="form-control search-input">
                                     {this.props.logo && (
                                         <img
-                                            src="/assets/img/logos/logo.png"
+                                            src="./assets/img/logos/logo.png"
                                             alt={localStorage.getItem("storeName")}
                                             width="120"
                                             height="33"

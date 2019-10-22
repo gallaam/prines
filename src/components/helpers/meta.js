@@ -8,7 +8,7 @@ class Meta extends Component {
     render() {
         return ( <React.Fragment >
             <Helmet >
-            <title> HELLO</title>
+            <title>{this.props.seotitle}</title>
             <meta name = "description"
             content = {
                 this.props.seodescription

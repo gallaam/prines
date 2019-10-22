@@ -47,17 +47,12 @@ class Desktop extends Component {
         });
     };
     render() {
-        return ( <
-            React.Fragment > {
-                this.state.showGdpr && ( <
-                    div className = "fixed-gdpr" >
-                    <
-                    span > {
+        return ( <React.Fragment > {
+                this.state.showGdpr && ( <div className = "fixed-gdpr" >
+                    <span > {
                         localStorage.getItem("gdprMessage")
-                    } < /span> <
-                    span >
-                    <
-                    button className = "btn btn-sm ml-2"
+                    } < /span> <span >
+                    <         button className = "btn btn-sm ml-2"
                     style = {
                         {
                             backgroundColor: localStorage.getItem("storeColor")
@@ -68,13 +63,11 @@ class Desktop extends Component {
                     } >
                     {
                         localStorage.getItem("gdprConfirmButton")
-                    } <
-                    /button> <
+                    } </button> <
                     /span> <
                     /div>
                 )
-            } <
-            Meta seotitle = {
+            } <Meta seotitle = {
                 localStorage.getItem("seoMetaTitle")
             }
             seodescription = {
@@ -96,14 +89,10 @@ class Desktop extends Component {
             twitterdescription = {
                 localStorage.getItem("seoTwitterDescription")
             }
-            /> <
-            Hero / >
-            <
-            StoreAchievements / >
-            <
-            Footer / >
-            <
-            /React.Fragment>
+            /> <Hero / >
+            <StoreAchievements / >
+            <Footer / >
+            </React.Fragment>
         );
     }
 }

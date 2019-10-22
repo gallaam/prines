@@ -6,6 +6,7 @@ export const searchLocations = query => dispatch => {
     Axios.post(SEARCH_LOCATIONS_URL + "/" + query)
         .then(response => {
             const locations = response.data;
+            console.log(locations);
             return dispatch({ type: SEARCH_LOCATIONS, payload: locations });
         })
         .catch(function(error) {

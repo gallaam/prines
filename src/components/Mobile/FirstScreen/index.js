@@ -120,8 +120,7 @@ class FirstScreen extends Component {
                                 <h2 className="welcome-subheading text-center mt-10 mb-10">
                                     {localStorage.getItem("firstScreenSubHeading")}
                                 </h2>
-                                <DelayLink
-                                    to="/search-location"
+                                <DelayLink to="/search-location"
                                     delay={200}
                                     className="btn btn-lg btn-setup-location"
                                     style={{

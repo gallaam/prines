@@ -22,7 +22,7 @@ class Footer extends Component {
             <
             div className = "col-md-6" >
             <
-            img src = "/assets/img/logos/logo.png"
+            img src = "./assets/img/logos/logo.png"
             alt = {
                 localStorage.getItem("storeName")
             }

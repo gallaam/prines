@@ -9,12 +9,11 @@ import * as serviceWorker from "./serviceWorker";
 const Root = ({
     children,
     initialState = {}
-}) => ( <
-    Provider store = {
+}) => ( <Provider store = {
         store(initialState)
-    } > {
+    } ><div> {
         children
-    } < /Provider>
+    } </div>< /Provider>
 );
 serviceWorker.register();
 // serviceWorker.unregister();
